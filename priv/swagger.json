@@ -1,0 +1,121 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "Microservice for KYC",
+    "version" : "1.1.0",
+    "title" : "kycService"
+  },
+  "host" : "http://127.0.0.1:3001/",
+  "paths" : {
+    "/api/kycs" : {
+      "post" : {
+        "tags" : [ "KYC" ],
+        "summary" : "Adds new KYC details of a particular user",
+        "description" : "Adds new KYC details",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response"
+          },
+          "500" : {
+            "description" : "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/kycs/{id}" : {
+      "put" : {
+        "tags" : [ "KYC" ],
+        "summary" : "Edits KYC details of a particular user",
+        "description" : "Edit a particualr KYC",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "Provide Id of kyc want to update",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response"
+          },
+          "500" : {
+            "description" : "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/kycs/isvalid/{userId}" : {
+      "get" : {
+        "tags" : [ "KYC" ],
+        "summary" : "Checks whether a user have a verified KYC",
+        "description" : "Check for KYC",
+        "parameters" : [ {
+          "name" : "userId",
+          "in" : "path",
+          "description" : "Please provide userId",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response"
+          },
+          "500" : {
+            "description" : "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/kycs/signature/{userId}" : {
+      "get" : {
+        "tags" : [ "KYC" ],
+        "summary" : "Checks whether a user have a verified KYC",
+        "description" : "Check for KYC",
+        "parameters" : [ {
+          "name" : "userId",
+          "in" : "path",
+          "description" : "Please provide userId",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response"
+          },
+          "500" : {
+            "description" : "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/kycs/init" : {
+      "post" : {
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/kycs/callback/{provider}" : {
+      "post" : {
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/api/kycs/code" : {
+      "post" : {
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "default response"
+          }
+        }
+      }
+    }
+  },
+  "definitions" : { }
+}
